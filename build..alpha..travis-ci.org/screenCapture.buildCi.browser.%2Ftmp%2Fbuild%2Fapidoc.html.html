@@ -1,0 +1,956 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/albertdb/node-zstandard#readme">node-zstandard (v1.2.4)</a>
+</h1>
+<h4>Node.js interface to Zstandard (zstd)</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-zstandard">module node-zstandard</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.compress">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>compress
+            <span class="apidocSignatureSpan">(inputFile, outputFile, compLevel, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.compressFileToFile">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>compressFileToFile
+            <span class="apidocSignatureSpan">(inputFile, outputFile, compLevel, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.compressStreamToFile">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>compressStreamToFile
+            <span class="apidocSignatureSpan">(readableStream, outputFile, compLevel, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.decompress">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>decompress
+            <span class="apidocSignatureSpan">(inputFile, outputFile, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.decompressFileToFile">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>decompressFileToFile
+            <span class="apidocSignatureSpan">(inputFile, outputFile, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.decompressFileToStream">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>decompressFileToStream
+            <span class="apidocSignatureSpan">(inputFile, writableStream, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.decompressionStreamFromFile">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>decompressionStreamFromFile
+            <span class="apidocSignatureSpan">(inputFile, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-zstandard.compress">module node-zstandard.compress</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.compress.compress">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>compress
+            <span class="apidocSignatureSpan">(inputFile, outputFile, compLevel, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-zstandard.compressStreamToFile">module node-zstandard.compressStreamToFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.compressStreamToFile.compressStreamToFile">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>compressStreamToFile
+            <span class="apidocSignatureSpan">(readableStream, outputFile, compLevel, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-zstandard.decompress">module node-zstandard.decompress</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.decompress.decompress">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>decompress
+            <span class="apidocSignatureSpan">(inputFile, outputFile, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-zstandard.decompressFileToStream">module node-zstandard.decompressFileToStream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.decompressFileToStream.decompressFileToStream">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>decompressFileToStream
+            <span class="apidocSignatureSpan">(inputFile, writableStream, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-zstandard.decompressionStreamFromFile">module node-zstandard.decompressionStreamFromFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-zstandard.decompressionStreamFromFile.decompressionStreamFromFile">
+            function <span class="apidocSignatureSpan">node-zstandard.</span>decompressionStreamFromFile
+            <span class="apidocSignatureSpan">(inputFile, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-zstandard" id="apidoc.module.node-zstandard">module node-zstandard</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.compress" id="apidoc.element.node-zstandard.compress">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>compress
+        <span class="apidocSignatureSpan">(inputFile, outputFile, compLevel, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compress(inputFile, outputFile, compLevel, callback){
+  var args=[];
+  for (var i=0; i&lt;arguments.length; i++) {
+      args.push(arguments[i]);
+  }
+  inputFile=path.resolve(args.shift());
+  outputFile=path.resolve(args.shift());
+  callback=args.pop();
+  if(args.length&gt;0) compLevel=args.shift(); else compLevel=3;
+  if(inputFile === outputFile){
+    if(callback) callback(new Error('Input and output files cannot be the same.'))
+    return;
+  }
+  if(compLevel&lt;1 || compLevel&gt;22)
+    compLevel=3;
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(path.dirname(outputFile), fs.W_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Output file is not writable.'));
+        return;
+      }
+      fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+        if(err){
+          if(callback) callback(new Error('Zstd binary is not executable.'));
+          return;
+        }
+        cp.execFile(zstdBinPath, ['-f', '-'+compLevel, inputFile, '-o', outputFile]
+                               , (err, stdout, stderr) =&gt; {
+
+          if(err){
+            if(callback) callback(err);
+            return;
+          } else if(stdout){
+            if(callback) callback(new Error(stdout));
+            return;
+          }
+          if(callback) callback(null, outputFile);
+        });
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `outputFile`: Path to store the resulting compressed file.
+* `compLevel`: Compression level (default=3).
+* `callback`: Function to be executed on task completion. Follows Node.js `(err, result)` pattern, being `result` equal to `outputFile
+` when succedded.
+
+NOTE: Input and output files should be different. Output file is overwritten if it exists.
+
+```
+zstd.<span class="apidocCodeKeywordSpan">compress</span>('./test', './test.zst', 3, (err, result) =&gt; {
+  if (err)
+    throw err;
+  console.log (result);
+});
+```
+
+#### compressStreamToFile (readableStream, outputFile [, compLevel], callback)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.compressFileToFile" id="apidoc.element.node-zstandard.compressFileToFile">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>compressFileToFile
+        <span class="apidocSignatureSpan">(inputFile, outputFile, compLevel, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compress(inputFile, outputFile, compLevel, callback){
+  var args=[];
+  for (var i=0; i&lt;arguments.length; i++) {
+      args.push(arguments[i]);
+  }
+  inputFile=path.resolve(args.shift());
+  outputFile=path.resolve(args.shift());
+  callback=args.pop();
+  if(args.length&gt;0) compLevel=args.shift(); else compLevel=3;
+  if(inputFile === outputFile){
+    if(callback) callback(new Error('Input and output files cannot be the same.'))
+    return;
+  }
+  if(compLevel&lt;1 || compLevel&gt;22)
+    compLevel=3;
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(path.dirname(outputFile), fs.W_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Output file is not writable.'));
+        return;
+      }
+      fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+        if(err){
+          if(callback) callback(new Error('Zstd binary is not executable.'));
+          return;
+        }
+        cp.execFile(zstdBinPath, ['-f', '-'+compLevel, inputFile, '-o', outputFile]
+                               , (err, stdout, stderr) =&gt; {
+
+          if(err){
+            if(callback) callback(err);
+            return;
+          } else if(stdout){
+            if(callback) callback(new Error(stdout));
+            return;
+          }
+          if(callback) callback(null, outputFile);
+        });
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.compressStreamToFile" id="apidoc.element.node-zstandard.compressStreamToFile">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>compressStreamToFile
+        <span class="apidocSignatureSpan">(readableStream, outputFile, compLevel, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compressStreamToFile(readableStream, outputFile, compLevel, callback){
+  var args=[];
+  for (var i=0; i&lt;arguments.length; i++) {
+      args.push(arguments[i]);
+  }
+  readableStream=args.shift();
+  outputFile=path.resolve(args.shift());
+  callback=args.pop();
+  if(args.length&gt;0) compLevel=args.shift(); else compLevel=3;
+  if(compLevel&lt;1 || compLevel&gt;22)
+    compLevel=3;
+  var eventEmitter = new events.EventEmitter();
+  fs.access(path.dirname(outputFile), fs.W_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Output file is not writable.'));
+      return;
+    }
+    fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Zstd binary is not executable.'));
+        return;
+      }
+      var proc=cp.spawn(zstdBinPath, ['-f', '-o', outputFile]);
+      readableStream.pipe(proc.stdin);
+      readableStream.on('error', (err) =&gt; {
+        proc.kill();
+        eventEmitter.emit('error', err);
+      });
+      proc.on('exit', (code, signal) =&gt; {
+        if(code==0) eventEmitter.emit('end');
+        else if(code!=0) eventEmitter.emit('error', new Error('Unexpected stream close. Code '+code+'. Signal '+signal));
+        proc.removeAllListeners('error');
+      });
+      proc.on('error', (err) =&gt; {
+        eventEmitter.emit('error', err);
+        proc.removeAllListeners('exit');
+      });
+      if(callback) callback(null, eventEmitter);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `callback`: Function to be executed on task initialization. Follows Node.js `(err, result)` pattern, being `result` an EventEmitter
+ that can emit the following events:
+* `error`: Emitted when an error reading the stream or creating the compressed file occurred. Error message is provided.
+* `end`: Emitted when task ended successfully.
+
+NOTE: Output file is overwritten if it exists.
+
+```
+zstd.<span class="apidocCodeKeywordSpan">compressStreamToFile</span>(aReadableStream, './test.zst', 3, (err, result) =&amp;#
+x3e; {
+if (err)
+  throw err;
+result.on('error', (err) =&gt; {
+  throw err;
+}
+result.on('end', () =&gt; {
+  console.log ('Compression ended');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.decompress" id="apidoc.element.node-zstandard.decompress">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>decompress
+        <span class="apidocSignatureSpan">(inputFile, outputFile, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decompress(inputFile, outputFile, callback){
+  inputFile=path.resolve(inputFile);
+  outputFile=path.resolve(outputFile);
+  if(inputFile === outputFile){
+    if(callback) callback(new Error('Input and output files cannot be the same.'))
+    return;
+  }
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(path.dirname(outputFile), fs.W_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Output file is not writable.'));
+        return;
+      }
+      fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+        if(err){
+          if(callback) callback(new Error('Zstd binary is not executable.'));
+          return;
+        }
+        cp.execFile(zstdBinPath, ['-f', '-d', inputFile, '-o', outputFile]
+                               , (err, stdout, stderr) =&gt; {
+          if(err){
+            if(callback) callback(err);
+            return;
+          } else if(stdout){
+            if(callback) callback(new Error(stdout));
+            return;
+          }
+          if(callback) callback(null, outputFile);
+        });
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `inputFile`: Path to the to compressed input file.
+* `outputFile`: Path to store the resulting decompressed file.
+* `callback`: Function to be executed on task completion. Follows Node.js `(err, result)` pattern, being `result` equal to `outputFile
+` when succedded.
+
+NOTE: Input and output files should be different. Output file is overwritten if it exists.
+
+```
+zstd.<span class="apidocCodeKeywordSpan">decompress</span>('./test.zst','./test', (err, result) =&gt; {
+  if (err)
+    throw err;
+  console.log (result);
+});
+```
+
+#### decompressFileToStream (inputFile, writableStream, callback)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.decompressFileToFile" id="apidoc.element.node-zstandard.decompressFileToFile">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>decompressFileToFile
+        <span class="apidocSignatureSpan">(inputFile, outputFile, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decompress(inputFile, outputFile, callback){
+  inputFile=path.resolve(inputFile);
+  outputFile=path.resolve(outputFile);
+  if(inputFile === outputFile){
+    if(callback) callback(new Error('Input and output files cannot be the same.'))
+    return;
+  }
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(path.dirname(outputFile), fs.W_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Output file is not writable.'));
+        return;
+      }
+      fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+        if(err){
+          if(callback) callback(new Error('Zstd binary is not executable.'));
+          return;
+        }
+        cp.execFile(zstdBinPath, ['-f', '-d', inputFile, '-o', outputFile]
+                               , (err, stdout, stderr) =&gt; {
+          if(err){
+            if(callback) callback(err);
+            return;
+          } else if(stdout){
+            if(callback) callback(new Error(stdout));
+            return;
+          }
+          if(callback) callback(null, outputFile);
+        });
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.decompressFileToStream" id="apidoc.element.node-zstandard.decompressFileToStream">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>decompressFileToStream
+        <span class="apidocSignatureSpan">(inputFile, writableStream, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decompressFileToStream(inputFile, writableStream, callback){
+  inputFile=path.resolve(inputFile);
+  var eventEmitter = new events.EventEmitter();
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Zstd binary is not executable.'));
+        return;
+      }
+      var exitCode;
+      var finished=false;
+      var options=['-d', inputFile, '-c']
+      var proc=cp.spawn(zstdBinPath, options);
+      proc.stdout.pipe(writableStream);
+      proc.on('exit', (code, signal) =&gt; {
+        if(code==39) eventEmitter.emit('error', new Error('Not in zstd format'));
+        else if(code!=0) eventEmitter.emit('error', new Error('Unexpected stream close. Code '+code+'. Signal '+signal));
+        else exitCode=0;
+        if(finished) eventEmitter.emit('finish');
+        proc.removeAllListeners('error');
+      });
+      proc.on('error', (err) =&gt; {
+        eventEmitter.emit('error', err);
+        proc.removeAllListeners('exit');
+      });
+      writableStream.on('error', (err) =&gt; {
+        eventEmitter.emit('error', err);
+        proc.kill();
+        writableStream.removeAllListeners('finish');
+      });
+      writableStream.on('finish', () =&gt; {
+        finished=true;
+        if(exitCode==0) eventEmitter.emit('finish');
+        writableStream.removeAllListeners('error');
+      });
+      if(callback) callback(null, eventEmitter);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.decompressionStreamFromFile" id="apidoc.element.node-zstandard.decompressionStreamFromFile">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>decompressionStreamFromFile
+        <span class="apidocSignatureSpan">(inputFile, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decompressionStreamFromFile(inputFile, callback){
+  inputFile=path.resolve(inputFile);
+  var eventEmitter = new events.EventEmitter();
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Zstd binary is not executable.'));
+        return;
+      }
+      var proc=cp.spawn(zstdBinPath, ['-d', inputFile, '-c']);
+      proc.stdout.on('data', (data) =&gt; {
+        eventEmitter.emit('data', data);
+      });
+      proc.once('exit', (code, signal) =&gt; {
+        if(code==0) eventEmitter.emit('end');
+        else if(code==39) eventEmitter.emit('error', new Error('Not in zstd format'));
+        else eventEmitter.emit('error', new Error('Unexpected stream close. Code '+code+'. Signal'+signal));
+        proc.stdout.removeAllListeners('data');
+        proc.removeAllListeners('error');
+      });
+      proc.once('error', (err) =&gt; {
+        eventEmitter.emit('error', err);
+        proc.stdout.removeAllListeners('data');
+        proc.removeAllListeners('exit');
+      });
+      if(callback) callback(null, eventEmitter);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-zstandard.compress" id="apidoc.module.node-zstandard.compress">module node-zstandard.compress</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.compress.compress" id="apidoc.element.node-zstandard.compress.compress">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>compress
+        <span class="apidocSignatureSpan">(inputFile, outputFile, compLevel, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compress(inputFile, outputFile, compLevel, callback){
+  var args=[];
+  for (var i=0; i&lt;arguments.length; i++) {
+      args.push(arguments[i]);
+  }
+  inputFile=path.resolve(args.shift());
+  outputFile=path.resolve(args.shift());
+  callback=args.pop();
+  if(args.length&gt;0) compLevel=args.shift(); else compLevel=3;
+  if(inputFile === outputFile){
+    if(callback) callback(new Error('Input and output files cannot be the same.'))
+    return;
+  }
+  if(compLevel&lt;1 || compLevel&gt;22)
+    compLevel=3;
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(path.dirname(outputFile), fs.W_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Output file is not writable.'));
+        return;
+      }
+      fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+        if(err){
+          if(callback) callback(new Error('Zstd binary is not executable.'));
+          return;
+        }
+        cp.execFile(zstdBinPath, ['-f', '-'+compLevel, inputFile, '-o', outputFile]
+                               , (err, stdout, stderr) =&gt; {
+
+          if(err){
+            if(callback) callback(err);
+            return;
+          } else if(stdout){
+            if(callback) callback(new Error(stdout));
+            return;
+          }
+          if(callback) callback(null, outputFile);
+        });
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `outputFile`: Path to store the resulting compressed file.
+* `compLevel`: Compression level (default=3).
+* `callback`: Function to be executed on task completion. Follows Node.js `(err, result)` pattern, being `result` equal to `outputFile
+` when succedded.
+
+NOTE: Input and output files should be different. Output file is overwritten if it exists.
+
+```
+zstd.<span class="apidocCodeKeywordSpan">compress</span>('./test', './test.zst', 3, (err, result) =&gt; {
+  if (err)
+    throw err;
+  console.log (result);
+});
+```
+
+#### compressStreamToFile (readableStream, outputFile [, compLevel], callback)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-zstandard.compressStreamToFile" id="apidoc.module.node-zstandard.compressStreamToFile">module node-zstandard.compressStreamToFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.compressStreamToFile.compressStreamToFile" id="apidoc.element.node-zstandard.compressStreamToFile.compressStreamToFile">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>compressStreamToFile
+        <span class="apidocSignatureSpan">(readableStream, outputFile, compLevel, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compressStreamToFile(readableStream, outputFile, compLevel, callback){
+  var args=[];
+  for (var i=0; i&lt;arguments.length; i++) {
+      args.push(arguments[i]);
+  }
+  readableStream=args.shift();
+  outputFile=path.resolve(args.shift());
+  callback=args.pop();
+  if(args.length&gt;0) compLevel=args.shift(); else compLevel=3;
+  if(compLevel&lt;1 || compLevel&gt;22)
+    compLevel=3;
+  var eventEmitter = new events.EventEmitter();
+  fs.access(path.dirname(outputFile), fs.W_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Output file is not writable.'));
+      return;
+    }
+    fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Zstd binary is not executable.'));
+        return;
+      }
+      var proc=cp.spawn(zstdBinPath, ['-f', '-o', outputFile]);
+      readableStream.pipe(proc.stdin);
+      readableStream.on('error', (err) =&gt; {
+        proc.kill();
+        eventEmitter.emit('error', err);
+      });
+      proc.on('exit', (code, signal) =&gt; {
+        if(code==0) eventEmitter.emit('end');
+        else if(code!=0) eventEmitter.emit('error', new Error('Unexpected stream close. Code '+code+'. Signal '+signal));
+        proc.removeAllListeners('error');
+      });
+      proc.on('error', (err) =&gt; {
+        eventEmitter.emit('error', err);
+        proc.removeAllListeners('exit');
+      });
+      if(callback) callback(null, eventEmitter);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `callback`: Function to be executed on task initialization. Follows Node.js `(err, result)` pattern, being `result` an EventEmitter
+ that can emit the following events:
+* `error`: Emitted when an error reading the stream or creating the compressed file occurred. Error message is provided.
+* `end`: Emitted when task ended successfully.
+
+NOTE: Output file is overwritten if it exists.
+
+```
+zstd.<span class="apidocCodeKeywordSpan">compressStreamToFile</span>(aReadableStream, './test.zst', 3, (err, result) =&amp;#
+x3e; {
+if (err)
+  throw err;
+result.on('error', (err) =&gt; {
+  throw err;
+}
+result.on('end', () =&gt; {
+  console.log ('Compression ended');
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-zstandard.decompress" id="apidoc.module.node-zstandard.decompress">module node-zstandard.decompress</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.decompress.decompress" id="apidoc.element.node-zstandard.decompress.decompress">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>decompress
+        <span class="apidocSignatureSpan">(inputFile, outputFile, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decompress(inputFile, outputFile, callback){
+  inputFile=path.resolve(inputFile);
+  outputFile=path.resolve(outputFile);
+  if(inputFile === outputFile){
+    if(callback) callback(new Error('Input and output files cannot be the same.'))
+    return;
+  }
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(path.dirname(outputFile), fs.W_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Output file is not writable.'));
+        return;
+      }
+      fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+        if(err){
+          if(callback) callback(new Error('Zstd binary is not executable.'));
+          return;
+        }
+        cp.execFile(zstdBinPath, ['-f', '-d', inputFile, '-o', outputFile]
+                               , (err, stdout, stderr) =&gt; {
+          if(err){
+            if(callback) callback(err);
+            return;
+          } else if(stdout){
+            if(callback) callback(new Error(stdout));
+            return;
+          }
+          if(callback) callback(null, outputFile);
+        });
+      });
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `inputFile`: Path to the to compressed input file.
+* `outputFile`: Path to store the resulting decompressed file.
+* `callback`: Function to be executed on task completion. Follows Node.js `(err, result)` pattern, being `result` equal to `outputFile
+` when succedded.
+
+NOTE: Input and output files should be different. Output file is overwritten if it exists.
+
+```
+zstd.<span class="apidocCodeKeywordSpan">decompress</span>('./test.zst','./test', (err, result) =&gt; {
+  if (err)
+    throw err;
+  console.log (result);
+});
+```
+
+#### decompressFileToStream (inputFile, writableStream, callback)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-zstandard.decompressFileToStream" id="apidoc.module.node-zstandard.decompressFileToStream">module node-zstandard.decompressFileToStream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.decompressFileToStream.decompressFileToStream" id="apidoc.element.node-zstandard.decompressFileToStream.decompressFileToStream">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>decompressFileToStream
+        <span class="apidocSignatureSpan">(inputFile, writableStream, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decompressFileToStream(inputFile, writableStream, callback){
+  inputFile=path.resolve(inputFile);
+  var eventEmitter = new events.EventEmitter();
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Zstd binary is not executable.'));
+        return;
+      }
+      var exitCode;
+      var finished=false;
+      var options=['-d', inputFile, '-c']
+      var proc=cp.spawn(zstdBinPath, options);
+      proc.stdout.pipe(writableStream);
+      proc.on('exit', (code, signal) =&gt; {
+        if(code==39) eventEmitter.emit('error', new Error('Not in zstd format'));
+        else if(code!=0) eventEmitter.emit('error', new Error('Unexpected stream close. Code '+code+'. Signal '+signal));
+        else exitCode=0;
+        if(finished) eventEmitter.emit('finish');
+        proc.removeAllListeners('error');
+      });
+      proc.on('error', (err) =&gt; {
+        eventEmitter.emit('error', err);
+        proc.removeAllListeners('exit');
+      });
+      writableStream.on('error', (err) =&gt; {
+        eventEmitter.emit('error', err);
+        proc.kill();
+        writableStream.removeAllListeners('finish');
+      });
+      writableStream.on('finish', () =&gt; {
+        finished=true;
+        if(exitCode==0) eventEmitter.emit('finish');
+        writableStream.removeAllListeners('error');
+      });
+      if(callback) callback(null, eventEmitter);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-zstandard.decompressionStreamFromFile" id="apidoc.module.node-zstandard.decompressionStreamFromFile">module node-zstandard.decompressionStreamFromFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-zstandard.decompressionStreamFromFile.decompressionStreamFromFile" id="apidoc.element.node-zstandard.decompressionStreamFromFile.decompressionStreamFromFile">
+        function <span class="apidocSignatureSpan">node-zstandard.</span>decompressionStreamFromFile
+        <span class="apidocSignatureSpan">(inputFile, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decompressionStreamFromFile(inputFile, callback){
+  inputFile=path.resolve(inputFile);
+  var eventEmitter = new events.EventEmitter();
+  fs.access(inputFile, fs.R_OK, (err) =&gt; {
+    if(err){
+      if(callback) callback(new Error('Input file is not readable.'));
+      return;
+    }
+    fs.access(zstdBinPath, fs.R_OK | fs.X_OK, (err) =&gt; {
+      if(err){
+        if(callback) callback(new Error('Zstd binary is not executable.'));
+        return;
+      }
+      var proc=cp.spawn(zstdBinPath, ['-d', inputFile, '-c']);
+      proc.stdout.on('data', (data) =&gt; {
+        eventEmitter.emit('data', data);
+      });
+      proc.once('exit', (code, signal) =&gt; {
+        if(code==0) eventEmitter.emit('end');
+        else if(code==39) eventEmitter.emit('error', new Error('Not in zstd format'));
+        else eventEmitter.emit('error', new Error('Unexpected stream close. Code '+code+'. Signal'+signal));
+        proc.stdout.removeAllListeners('data');
+        proc.removeAllListeners('error');
+      });
+      proc.once('error', (err) =&gt; {
+        eventEmitter.emit('error', err);
+        proc.stdout.removeAllListeners('data');
+        proc.removeAllListeners('exit');
+      });
+      if(callback) callback(null, eventEmitter);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
