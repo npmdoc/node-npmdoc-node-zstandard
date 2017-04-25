@@ -1,4 +1,7 @@
-# api documentation for  [node-zstandard (v1.2.4)](https://github.com/albertdb/node-zstandard#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-zstandard.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-zstandard) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-zstandard.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-zstandard)
+# npmdoc-node-zstandard
+
+#### basic api documentation for  [node-zstandard (v1.2.4)](https://github.com/albertdb/node-zstandard#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-zstandard.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-zstandard) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-zstandard.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-zstandard)
+
 #### Node.js interface to Zstandard (zstd)
 
 [![NPM](https://nodei.co/npm/node-zstandard.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-zstandard)
@@ -54,7 +57,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "version": "1.2.4"
+    "version": "1.2.4",
+    "bin": {}
 }
 ```
 
